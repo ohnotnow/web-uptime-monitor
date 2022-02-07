@@ -8,9 +8,9 @@ services:
       APP_NAME: Uptime Monitor
       APP_ENV: local
       APP_KEY: base64:Zem8ggU3jOWKUiWrLMeYeU3HHMKXbD/RwxRLpHH4FHE=
-      APP_DEBUG: true
+      APP_DEBUG: 1
       MAIL_MAILER: smtp
-      MAIL_ENCRYPTION: false
+      MAIL_ENCRYPTION: 0
       MAIL_HOST: ${MAIL_HOST:-mailhog}
       MAIL_PORT: ${MAIL_PORT:-1025}
       MAIL_FROM_ADDRESS: ${MAIL_FROM_ADDRESS:-noreply@example.com}
