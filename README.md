@@ -1,6 +1,6 @@
 # JWNC Uptime Monitor
 
-This is a very basic Laravel app with Spatie's (Laravel Uptime Monitor)[https://spatie.be/docs/laravel-uptime-monitor/v3/introduction] pulled in to do some http and ssl monitoring.
+This is a very basic Laravel app with Spatie's [Laravel Uptime Monitor](https://spatie.be/docs/laravel-uptime-monitor/v3/introduction) pulled in to do some http and ssl monitoring.
 
 ## Usage
 
