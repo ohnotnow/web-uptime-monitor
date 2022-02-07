@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+
+set -e
+
+role=${CONTAINER_ROLE:-app}
+env=${APP_ENV:-production}
+
+php /var/www/html/artisan config:cache
+
+echo "" > database/database.sqlite
+php artisan migrate --force
+for URL in `cat sites.txt`;
+do
+  php artisan monitor:create -q "${URL}"
+done
+
+php artisan monitor:list
+
+nice php /var/www/html/artisan schedule:work --verbose --no-interaction

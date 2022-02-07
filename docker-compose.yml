@@ -1,0 +1,29 @@
+version: "3.7"
+
+services:
+  app:
+    # assume that this is started via `docker compose up --build`.  If you are using a dedicated image then set the IMAGE_NAME
+    # image: ${IMAGE_NAME}
+    environment:
+      APP_NAME: Uptime Monitor
+      APP_ENV: local
+      APP_KEY: base64:Zem8ggU3jOWKUiWrLMeYeU3HHMKXbD/RwxRLpHH4FHE=
+      APP_DEBUG: true
+      MAIL_MAILER: smtp
+      MAIL_ENCRYPTION: false
+      MAIL_HOST: ${MAIL_HOST:-mailhog}
+      MAIL_PORT: ${MAIL_PORT:-1025}
+      MAIL_FROM_ADDRESS: ${MAIL_FROM_ADDRESS:-noreply@example.com}
+      MAIL_FROM_NAME: ${MAIL_FROM_NAME:-UptimeMonitor}
+      UPTIME_MONITOR_ALERT_EMAIL: ${UPTIME_MONITOR_ALERT_EMAIL}
+      UPTIME_MONITOR_SLACK_WEBHOOK_URL: ${UPTIME_MONITOR_SLACK_WEBHOOK_URL}
+      DB_CONNECTION: sqlite
+      LOG_CHANNEL: stderr
+    build:
+      context: .
+      target: prod
+
+  # mailhog:
+  #   image: mailhog/mailhog
+  #   ports:
+  #     - "3025:8025"
