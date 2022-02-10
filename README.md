@@ -21,3 +21,8 @@ Then run the app :
 ```bash
 docker compose up --build # add -d if you want it to run in the background
 ```
+
+## Running in production
+
+If you want to use this 'for real' then it would be worth editing the `docker-compose.yml` file and hard-coding the values for some of the environment variables.  Otherwise on a reboot the service will restart but have lost all the values for `MAIL_HOST` etc.
+
