@@ -11,6 +11,7 @@ export MAIL_FROM_ADDRESS=you@example.com
 export UPTIME_MONITOR_ALERT_EMAIL=someone@example.com,someone-else@example.com
 # optionally
 export UPTIME_MONITOR_SLACK_WEBHOOK_URL=https://slack.com/......
+export UPTIME_MONITOR_TEAMS_WEBHOOK_URL=https://example.webhook.office.com/......
 ```
 Now create a file called `sites.txt` and put one URL per line, eg:
 ```
