@@ -29,5 +29,7 @@ return [
         'secret' => env('AWS_SECRET_ACCESS_KEY'),
         'region' => env('AWS_DEFAULT_REGION', 'us-east-1'),
     ],
-
+    'teams' => [
+        'webhook_url' => env('UPTIME_MONITOR_TEAMS_WEBHOOK_URL'),
+    ],
 ];

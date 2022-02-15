@@ -1,5 +1,7 @@
 <?php
 
+use NotificationChannels\MicrosoftTeams\MicrosoftTeamsChannel;
+
 return [
 
     /*
@@ -9,13 +11,21 @@ return [
     'notifications' => [
 
         'notifications' => [
-            \Spatie\UptimeMonitor\Notifications\Notifications\UptimeCheckFailed::class => ['mail', 'slack'],
-            \Spatie\UptimeMonitor\Notifications\Notifications\UptimeCheckRecovered::class => ['mail', 'slack'],
-            \Spatie\UptimeMonitor\Notifications\Notifications\UptimeCheckSucceeded::class => [],
+            // \Spatie\UptimeMonitor\Notifications\Notifications\UptimeCheckFailed::class => ['mail', 'slack'],
+            // \Spatie\UptimeMonitor\Notifications\Notifications\UptimeCheckRecovered::class => ['mail', 'slack'],
+            // \Spatie\UptimeMonitor\Notifications\Notifications\UptimeCheckSucceeded::class => [],
 
-            \Spatie\UptimeMonitor\Notifications\Notifications\CertificateCheckFailed::class => ['mail', 'slack'],
-            \Spatie\UptimeMonitor\Notifications\Notifications\CertificateExpiresSoon::class => ['mail', 'slack'],
-            \Spatie\UptimeMonitor\Notifications\Notifications\CertificateCheckSucceeded::class => [],
+            \App\Notifications\UptimeCheckFailed::class => ['mail', 'slack', \NotificationChannels\MicrosoftTeams\MicrosoftTeamsChannel::class],
+            \App\Notifications\UptimeCheckRecovered::class => ['mail', 'slack', \NotificationChannels\MicrosoftTeams\MicrosoftTeamsChannel::class],
+            \App\Notifications\UptimeCheckSucceeded::class => [],
+
+            // \Spatie\UptimeMonitor\Notifications\Notifications\CertificateCheckFailed::class => ['mail', 'slack'],
+            // \Spatie\UptimeMonitor\Notifications\Notifications\CertificateExpiresSoon::class => ['mail', 'slack'],
+            // \Spatie\UptimeMonitor\Notifications\Notifications\CertificateCheckSucceeded::class => [],
+
+            \App\Notifications\CertificateCheckFailed::class => ['mail', 'slack', \NotificationChannels\MicrosoftTeams\MicrosoftTeamsChannel::class],
+            \App\Notifications\CertificateExpiresSoon::class => ['mail', 'slack', \NotificationChannels\MicrosoftTeams\MicrosoftTeamsChannel::class],
+            \App\Notifications\CertificateCheckSucceeded::class => [],
         ],
 
         /*
