@@ -4,6 +4,7 @@ services:
   app:
     # assume that this is started via `docker compose up --build`.  If you are using a dedicated image then set the IMAGE_NAME
     # image: ${IMAGE_NAME}
+    restart: always
     environment:
       APP_NAME: Uptime Monitor
       APP_ENV: local
