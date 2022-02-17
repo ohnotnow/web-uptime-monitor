@@ -60,8 +60,8 @@ COPY . /var/www/html
 #- Clear any cached composer stuff
 RUN rm -fr /var/www/html/bootstrap/cache/*.php
 
-#- Clean up and production-cache our apps settings/views/routing
-RUN php /var/www/html/artisan storage:link && \
-    php /var/www/html/artisan view:cache && \
-    php /var/www/html/artisan route:cache && \
-    chown -R www-data:www-data storage bootstrap/cache
+#- Make sure file permissions are ok
+RUN chown -R www-data:www-data storage bootstrap/cache
+
+#- Install any custom SSL certs
+RUN docker/install_certs.sh
