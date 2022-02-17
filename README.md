@@ -27,12 +27,12 @@ docker compose up --build # add -d if you want it to run in the background
 
 If you want to use this 'for real' then it would be worth editing the `docker-compose.yml` file and hard-coding the values for some of the environment variables.  Otherwise on a reboot the service will restart but have lost all the values for `MAIL_HOST` etc.
 
-## Custom SSL certs
+### Custom SSL certs
 
 If you need to add your own root/intermediate certificates, place the `.crt` files in `docker/certs/`.  Those will be
 read at build time and installed into the container's certificate store.
 
-## Extra configuration
+### Extra configuration
 
 The main config file for the uptime monitoring is `config/uptime-monitor.php`.  You can edit various options in there
 like the frequency of checks, which alerts to send etc.
