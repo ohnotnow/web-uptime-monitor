@@ -32,3 +32,8 @@ If you want to use this 'for real' then it would be worth editing the `docker-co
 If you need to add your own root/intermediate certificates, place the `.crt` files in `docker/certs/`.  Those will be
 read at build time and installed into the container's certificate store.
 
+## Extra configuration
+
+The main config file for the uptime monitoring is `config/uptime-monitor.php`.  You can edit various options in there
+like the frequency of checks, which alerts to send etc.
+
