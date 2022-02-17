@@ -11,6 +11,6 @@ for C in docker/certs/*.crt;
 do
     cp -f "${C}" /usr/share/ca-certificates/mozilla/
     CB=`basename "${C}"`
-    echo "mozille/${CB}" >> /etc/ca-certificates.conf
+    echo "mozilla/${CB}" >> /etc/ca-certificates.conf
 done
 /usr/sbin/update-ca-certificates
