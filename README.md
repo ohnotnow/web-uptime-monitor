@@ -22,6 +22,12 @@ Then run the app :
 ```bash
 docker compose up --build # add -d if you want it to run in the background
 ```
+If you want to add or remove entries from the sites.txt just run:
+```bash
+docker compose down
+vim sites.txt
+docker compose up --build -d
+```
 
 ## Running in production
 
