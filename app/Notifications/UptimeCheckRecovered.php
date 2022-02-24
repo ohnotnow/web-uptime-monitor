@@ -4,7 +4,7 @@ namespace App\Notifications;
 
 use NotificationChannels\MicrosoftTeams\MicrosoftTeamsMessage;
 
-class UptimeCheckRecovered extends \Spatie\UptimeMonitor\Notifications\Notifications\UptimeCheckFailed
+class UptimeCheckRecovered extends \Spatie\UptimeMonitor\Notifications\Notifications\UptimeCheckRecovered
 {
     public function toMicrosoftTeams($notifiable)
     {

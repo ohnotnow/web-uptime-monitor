@@ -16,7 +16,7 @@ services:
       MAIL_PORT: ${MAIL_PORT:-1025}
       MAIL_FROM_ADDRESS: ${MAIL_FROM_ADDRESS:-noreply@example.com}
       MAIL_FROM_NAME: ${MAIL_FROM_NAME:-UptimeMonitor}
-      UPTIME_MONITOR_ALERT_EMAIL: ${UPTIME_MONITOR_ALERT_EMAIL}
+      UPTIME_MONITOR_ALERT_EMAIL: ${UPTIME_MONITOR_ALERT_EMAIL:-alerts@example.com}
       UPTIME_MONITOR_SLACK_WEBHOOK_URL: ${UPTIME_MONITOR_SLACK_WEBHOOK_URL}
       UPTIME_MONITOR_TEAMS_WEBHOOK_URL: ${UPTIME_MONITOR_TEAMS_WEBHOOK_URL}
       DB_CONNECTION: sqlite
@@ -25,7 +25,7 @@ services:
       context: .
       target: prod
 
-  # mailhog:
-  #   image: mailhog/mailhog
-  #   ports:
-  #     - "3025:8025"
+        #mailhog:
+        #image: mailhog/mailhog
+        #ports:
+        #- "3025:8025"
