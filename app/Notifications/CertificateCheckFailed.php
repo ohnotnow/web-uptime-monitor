@@ -1,6 +1,6 @@
 <?php
 
-namespace Spatie\UptimeMonitor\Notifications\Notifications;
+namespace App\Notifications;
 
 use Carbon\Carbon;
 use Illuminate\Notifications\Messages\MailMessage;
