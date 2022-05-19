@@ -24,8 +24,8 @@ docker compose up --build # add -d if you want it to run in the background
 ```
 If you want to add or remove entries from the sites.txt just run:
 ```bash
-docker compose down
 vim sites.txt
+docker compose down
 docker compose up --build -d
 ```
 
@@ -42,4 +42,20 @@ read at build time and installed into the container's certificate store.
 
 The main config file for the uptime monitoring is `config/uptime-monitor.php`.  You can edit various options in there
 like the frequency of checks, which alerts to send etc.
+
+### Some helpful commands
+
+If you want to list the sites, check their status, silence/un-silence them then you can do the following :
+
+```bash
+# list sites
+docker compose exec app php artisan monitor:list
+
+# silence a site
+docker compose exec app php artisan monitor:disable https://www.example.com
+
+# un-silence a site
+docker compose exec app php artisan monitor:enable https://www.example.com
+```
+
 
